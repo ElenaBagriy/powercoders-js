@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-exercises</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- <link href="
+        https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
+        " rel="stylesheet"> -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <form class="form" action="./index.js">
+            <label> Type integer numbers. You can use "," and spaces.
+                <input type="text">
+            </label>
+            <button type="submit">Calculate</button>
+        </form>
+        <p class="answer-box">
+        </p>
+        <ol class="description-box" type="1">
+            <li>Put the inputed numbers into array.</li>
+            <li>Create an empty object with properties value, left and right.</li>
+            <li>Loop through all the numbers that need to be sorted.</li>
+            <li>For each number:
+                <ol type="a">
+                    <li>Stick it into the object. If the object is empty, this will be the first object value.</li>
+                    <li>If the object is not empty, compare the number at each node(value):</li>
+                    <li>If the number is less than or equal to the current node, go to the left subtree.</li>
+                    <li>If the number is bigger than the current node, go to the right subtree.</li>
+                    <li>Continue this process until you find a suitable place for the number.</li>
+                </ol>
+            </li>
+            <li>Once all the numbers have been added to the tree, go through your entire tree starting at the top of
+                it to get a sorted list of
+                values. The algorithm:
+                <ol type="a">
+                    <li>Create an empty array for the sorted list.</li>
+                    <li> If the node has the left-property, go there. If not - go to next step. If there are more
+                        "left-branches" - go down there. After you find the most left branch, that exists and was
+                        not visited before - push the value of this left-property-branch into an empty array.</li>
+                    <li>Go upper and push the value into the array.</li>
+                    <li> After checking the left-property and pushing the own-value, go to the right branch.If not
+                        go to next step</li>
+                    <li> After checking the right-property, repeat point 5.c.</li>
+                    <li>If you need to sort number in descending order, always start with the right branch instead
+                        of the left.</li>
+
+                </ol>
+            </li>
+            <li>Print a sorted list.</li>
+        </ol>
+
+    </main>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
